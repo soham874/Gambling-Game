@@ -31,6 +31,8 @@ class Utility {
 
     //month game simulation
     monthGame(){
+
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NEW MONTH SIMULATION~~~~~~~~~~~~~~~~~~~")
         for(let i = 1;i<=20;i++){
             var finalAmount = this.dayGame()
 
@@ -43,9 +45,11 @@ class Utility {
             }
         }
             
-
-        if(amount > 100)
+        var flag = 0
+        if(amount > 100){
             console.log("Amount won after a month is " + (amount - 100))
+            flag = 1
+        }
         else
             console.log("Amount lost after a month is " + (100 - amount ))   
             
@@ -57,8 +61,21 @@ class Utility {
         this.maxAmountAndDay(wonDay,wonAmount)
         this.maxAmountAndDay(lostDay,lostAmount)
 
+        if(flag == 1){
+            wonDay = []
+            wonAmount = []
+            lostDay = []
+            lostAmount = []
+            console.log("I am playing again!!")
+            this.monthGame()
+        } else {
+            console.log("I am stopping play!!")
+            return 0
+        }
+
     }
 
+    //find maximum amount and corresponding day
     maxAmountAndDay(days,amounts){
 
         var pos = 0
