@@ -3,8 +3,14 @@ var betAmount = 1
 
 class Utility {
 
-    //start the game with $100
-    initializeGame(){
+    //play a turn of the game
+    playGame(){ 
+        var game = Math.floor(Math.random()*10%2)
+
+        if (game == 0)
+            amount-=betAmount
+        else
+            amount+=betAmount          
 
     }
 
