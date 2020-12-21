@@ -53,6 +53,22 @@ class Utility {
         console.log("Amount won on corresponding days : "+wonAmount)
         console.log("Days on which game was lost : "+lostDay)
         console.log("Amount lost on corresponding days : "+lostAmount)
+
+        this.maxAmountAndDay(wonDay,wonAmount)
+        this.maxAmountAndDay(lostDay,lostAmount)
+
+    }
+
+    maxAmountAndDay(days,amounts){
+
+        var pos = 0
+
+        for(let i = 0;i<amounts.length;i++)
+            if(amounts[i] > amounts[pos])
+                pos = i
+
+        console.log("Amount = "+amounts[pos]+", Day = "+days[pos])
+
     }
 }
 
