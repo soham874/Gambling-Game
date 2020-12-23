@@ -1,4 +1,4 @@
-console.log("Welcome to gambling game!")
+console.log("\nWelcome to gambling game!\n")
 
 let utility = require('./Utility.js')
 
